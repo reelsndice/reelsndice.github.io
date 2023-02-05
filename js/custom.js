@@ -1068,8 +1068,8 @@ var Industry = function(){
 	}
 	
 	var handleSupport = function(){
-		var support = '<a href="https://1.envato.market/1d1Nm" target="_blank" class="bt-buy-now theme-btn"><i class="ti-shopping-cart"></i><span>Buy Now</span></a><a href="https://support.w3itexperts.com" target="_blank" class="bt-support-now theme-btn"><i class="ti-headphone-alt"></i><span>Support</span></a><!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b221c5e31b4e54b"></script>';
-		jQuery('body').append(support);
+		// var support = '<a href="https://1.envato.market/1d1Nm" target="_blank" class="bt-buy-now theme-btn"><i class="ti-shopping-cart"></i><span>Buy Now</span></a><a href="https://support.w3itexperts.com" target="_blank" class="bt-support-now theme-btn"><i class="ti-headphone-alt"></i><span>Support</span></a><!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b221c5e31b4e54b"></script>';
+		// jQuery('body').append(support);
 	}
 	
 	/* Website Launch Date */ 
@@ -1155,6 +1155,9 @@ var Industry = function(){
 		jQuery('.menu-close').on('click',function(){
 			jQuery('.menu-close,.full-sidenav').removeClass('active');
 		});
+		jQuery('.nav-link-wrap').on('click',function(){
+			jQuery('.menu-close,.full-sidenav').removeClass('active');
+		});		
 	}
 	
 	/* Function ============ */
