@@ -665,36 +665,28 @@
 						<div class="col-lg-4 col-md-6  mb-4 m-b30 mb-md-0">
 							<div class="p-a30 bg-gray clearfix radius-sm" style="height:550px">
 								<h3 class="m-b10">LET US KNOW</h3>
-								<div class="dzFormMsg"></div>
-								<form method="post" class="dzForm" action="script/contact.php">
-								<input type="hidden" value="Contact" name="dzToDo" >
+								<div class="formMsg">We will get back to you soon!!</div>
+								<form id="contactForm" method="post" class="dzForm">
+									<input type="hidden" value="Contact" name="dzToDo" >
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="form-group">
 												<div class="input-group">
-													<input name="dzName" type="text" required class="form-control" placeholder="Your Name">
+													<input id="name" name="name" type="text" required class="form-control" placeholder="Your Name">
 												</div>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
 												<div class="input-group"> 
-													<input name="dzEmail" type="email" class="form-control" required  placeholder="Your Email Id" >
+													<input id="email" name="email" type="email" class="form-control" required  placeholder="Your Email Id" >
 												</div>
 											</div>
 										</div>
 											<div class="col-lg-12">
 											<div class="form-group">
 												<div class="input-group">
-													<textarea name="dzMessage" rows="4" class="form-control" required placeholder="Your Message..."></textarea>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-12">
-											<div class="form-group">
-												<div class="input-group">
-													<div class="g-recaptcha" data-sitekey="<!-- Put reCaptcha Site Key -->" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-													<input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
+													<textarea id="message" name="message" rows="4" class="form-control" required placeholder="Your Message..."></textarea>
 												</div>
 											</div>
 										</div>
@@ -807,6 +799,9 @@
 <script src="plugins/countdown/jquery.countdown.js"></script><!-- COUNTDOWN FUCTIONS  -->
 <script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 <script src="plugins/rangeslider/rangeslider.js" ></script><!-- Rangeslider -->
+<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script><!-- FIREBASE JS  -->
+<script src="js/contactus.js"></script><!-- FIREBASE JS  -->
+
 
 <script src="js/jquery.lazy.min.js"></script>
 <!-- REVOLUTION JS FILES -->
