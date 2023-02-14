@@ -32,11 +32,11 @@ jQuery(document).ready(function() {
         saveMessage(name, company, email, phone, message);
     
         // Show alert
-        document.querySelector('.formMsg').style.display = 'block';
+        document.querySelector('.formMsgSubmit').innerHTML = 'We will get back to you soon!!';
     
         // Hide alert after 3 seconds
         setTimeout(function(){
-        document.querySelector('.formMsg').style.display = 'none';
+            document.querySelector('.formMsgSubmit').innerHTML = 'Submit';
         },3000);
     
         // Clear form
