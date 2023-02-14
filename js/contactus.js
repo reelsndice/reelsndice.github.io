@@ -5,15 +5,14 @@ var firebaseConfig = {
     storageBucket: "reelsndice-main.appspot.com",
     messagingSenderId: "805611676345",
     appId: "1:805611676345:web:fd361a740182afc99d3168",
-    measurementId: "G-S48T2EZKK3",
-    databaseURL: "https://reelsndice-main.firebaseio.com",
+    measurementId: "G-S48T2EZKK3"
 };
-
 
 jQuery(document).ready(function() {
     firebase.initializeApp(firebaseConfig);
   
-    var messagesRef = firebase.database().ref('contact-messages');
+    //var messagesRef = firebase.database().ref('contact-messages');
+    var db = firebase.firestore();
   
     // Listen for form submit
     document.getElementById('contactForm').addEventListener('submit', submitForm);
@@ -51,13 +50,28 @@ jQuery(document).ready(function() {
     
     // Save message to firebase
     function saveMessage(name, company, email, phone, message){
-        var newMessageRef = messagesRef.push();
-        newMessageRef.set({
-        name: name,
-        company: company,
-        email: email,
-        phone: phone,
-        message: message
+        // var newMessageRef = messagesRef.push();
+        // newMessageRef.set({
+        // name: name,
+        // company: company,
+        // email: email,
+        // phone: phone,
+        // message: message
+        // });
+        db.collection('contact-messages').add(
+            {
+                name: name,
+                company: company,
+                email: email,
+                phone: phone,
+                message: message
+            }
+        ).then((docRef) => {
+            console.log(docRef.id)
+        }).catch((error) => {
+                console.log(error)
+        }).finally(() => {
+                console.log(`Finishing`)
         });
     }
 });
