@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
     var db = firebase.firestore();
   
     // Listen for form submit
-    //document.getElementById('contactForm').addEventListener('submit', submitForm);
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
     
     // Submit form
     function submitForm(e){
