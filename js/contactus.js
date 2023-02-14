@@ -32,7 +32,7 @@ jQuery(document).ready(function() {
         saveMessage(name, company, email, phone, message);
     
         // Show alert
-        document.querySelector('.formMsgSubmit').innerHTML = 'We will get back to you soon!!';
+        document.querySelector('.formMsgSubmit').innerHTML = 'Thank you! Revert to you soon...';
     
         // Hide alert after 3 seconds
         setTimeout(function(){
