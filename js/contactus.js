@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
     var db = firebase.firestore();
   
     // Listen for form submit
-    document.getElementById('contactForm').addEventListener('submit', submitForm);
+    //document.getElementById('contactForm').addEventListener('submit', submitForm);
     
     // Submit form
     function submitForm(e){
@@ -32,11 +32,16 @@ jQuery(document).ready(function() {
         saveMessage(name, company, email, phone, message);
     
         // Show alert
-        document.querySelector('.formMsgSubmit').innerHTML = 'Thank you! Revert to you soon...';
+        document.querySelector('.formMsgSubmit').disabled = true;
+        document.querySelector('.formMsgSubmit').innerHTML = '<sapn>Please wait.....</sapn>';
     
-        // Hide alert after 3 seconds
         setTimeout(function(){
-            document.querySelector('.formMsgSubmit').innerHTML = 'Submit';
+            document.querySelector('.formMsgSubmit').innerHTML = '<sapn>Thank you! We will get back to you soon.</sapn>';
+        },1500);        
+
+        setTimeout(function(){
+            document.querySelector('.formMsgSubmit').innerHTML = '<sapn>Submit</sapn>';
+            document.querySelector('.formMsgSubmit').disabled = false;
         },3000);
     
         // Clear form
